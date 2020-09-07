@@ -1,0 +1,121 @@
+---
+title: "608 HW1"
+author: "Jason Givens-Doyle"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+
+```{r include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(magrittr) #because as much as some don't like it, I like the bidirectional arrow
+library(forcats)
+```
+**Principles of Data Visualization and Introduction to ggplot2**
+
+I have provided you with data about the 5,000 fastest growing companies in the US, as compiled by Inc. magazine. lets read this in:
+
+```{r}
+
+inc <- read.csv("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module1/Data/inc5000_data.csv", header= TRUE)
+
+```
+
+And lets preview this data:
+
+```{r}
+
+head(inc)
+
+```
+```{r}
+
+summary(inc)
+
+```
+
+Think a bit on what these summaries mean. Use the space below to add some more relevant non-visual exploratory information you think helps you understand this data:
+
+```{r}
+list_for_inc<-complete.cases(inc)
+comp_inc<-inc[list_for_inc,]
+high_to_low_order<-inc%>%count(State)%>%arrange(desc(n))
+print(high_to_low_order)
+alphabetical_order<-inc%>%count(State)
+
+#this was done out of curriosity to see how well the number of companies lines up with state populations
+# Insert your code here, create more chunks as necessary
+
+```
+
+
+## Question 1
+
+Create a graph that shows the distribution of companies in the dataset by State (ie how many are in each state). There are a lot of States, so consider which axis you should use. This visualization is ultimately going to be consumed on a 'portrait' oriented screen (ie taller than wide), which should further guide your layout choices.
+
+```{r out.height='170%'}
+ggplot(data=comp_inc,aes(fct_rev(fct_infreq(factor(State)))))+geom_bar()+coord_flip()+theme(axis.title = element_blank(),panel.background = element_blank(),panel.grid= element_line("light gray"),plot.title = element_text(hjust=.5))+labs(title="Number of Inc. Fastest Growing Companies by State")
+# Answer Question 1 here
+
+```
+
+## Quesiton 2
+
+Lets dig in on the state with the 3rd most companies in the data set. Imagine you work for the state and are interested in how many people are employed by companies in different industries. Create a plot that shows the average and/or median employment by industry for companies in this state (only use cases with full data, use R's `complete.cases()` function.) In addition to this, your graph should show how variable the ranges are, and you should deal with outliers.
+
+For this one, I created an outlier chart as well, as I would want any potential investor to know that there are giants in some of the industries that are not shown in the initial graph.
+
+```{r warning=FALSE}
+
+SError<- function(x, na.rm=TRUE){
+  sd(x,na.rm = TRUE)/sqrt(length(x))
+}
+
+New_york<-subset(comp_inc,State=="NY")
+#dealing with outliers
+emp_out_values<-boxplot.stats(New_york$Employees)$out
+emp_out_rows<-which(New_york$Employees %in% c(emp_out_values))
+NY_no_out_Industry<-New_york[-c(emp_out_rows),]
+NY_out<-New_york[c(emp_out_rows),]
+# Answer Question 2 here
+Industry_mean = aggregate(NY_no_out_Industry,by=list(NY_no_out_Industry$Industry),FUN=mean, na.rm=TRUE)
+#median did not fix things, sticking with mean
+#tried SD, that was a mistake, using SE
+
+
+
+Industry_SE = aggregate(NY_no_out_Industry,by=list(NY_no_out_Industry$Industry),FUN=SError, na.rm=TRUE)
+Industry_SE%<>%mutate_all(~replace(., is.na(.), 0))
+Industry_both<-cbind(Industry_mean,"SE"=Industry_SE$Employees)
+
+
+ggplot(Industry_both,aes(x=Group.1, y=Employees)) + geom_bar(stat="identity") + geom_errorbar(aes(ymin=Employees-SE,ymax=Employees+SE),width=.2,position=position_dodge(.9)) + theme(axis.title = element_blank(),panel.background = element_blank(),panel.grid= element_line("light gray"))+coord_flip()+labs(title = "Average Employee Number by Industry")
+
+ggplot(NY_out,aes(x=Industry, y=Employees))+geom_point()+theme(axis.text.x = element_text(angle = 90,vjust=1),panel.background = element_blank(),axis.line = element_line(colour = "black"),plot.title = element_text(hjust=.5))+geom_text(aes(label=ifelse(Employees>2000,as.character(Employees),"")),hjust=1,vjust=.3)+labs(title="Outlier Companies")
+
+```
+
+
+## Question 3
+
+Now imagine you work for an investor and want to see which industries generate the most revenue per employee. Create a chart that makes this information clear. Once again, the distribution per industry should be shown.
+
+I'd love to leave in the outliers, but Cedar Petrochemicals messes everything up.  So I removed them.  The standard errors are so small that there is no point including them in the graph.  If you run the commented out code, you can see how they are just dots on the tips of the bars.
+
+```{r warning=FALSE}
+New_york_per<-mutate(New_york,per=Revenue/Employees)
+New_york_per<-New_york_per[-154,]
+mean_NY_per = aggregate(New_york_per,by=list(New_york_per$Industry),FUN=mean, na.rm=TRUE)
+se_NY_per = aggregate(New_york_per,by=list(New_york_per$Industry),FUN=SError, na.rm=TRUE)
+se_NY_per%<>%mutate_all(~replace(., is.na(.), 0))
+
+both_per<-cbind(mean_NY_per,"SE"=se_NY_per$Employees)
+
+ggplot(both_per,aes(x=Group.1, y=per)) + geom_bar(stat="identity") + theme(axis.title = element_blank(),panel.background = element_blank(),panel.grid= element_line("light gray"))+coord_flip()+labs(title = "Average Income per Employee by Industry")
+
+#ggplot(both_per,aes(x=Group.1, y=per)) + geom_bar(stat="identity") + geom_errorbar(aes(ymin=per-SE,ymax=per+SE),width=.2,position=position_dodge(.9)) + theme(axis.title = element_blank(),panel.background = element_blank(),panel.grid= element_line("light gray"))+coord_flip()+labs(title = "Average Income per Employee by Industry")
+```
+
+
