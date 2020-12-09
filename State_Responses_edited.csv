@@ -1,15 +1,15 @@
 ﻿Date,NY,TX,,Non-Excel date
 2020-03-01,State of Emergency Declared on 2020-01-03,,,2020-01-30
-2020-03-07,"Gatherings of more than 500 prohibited, gatherings of less than 500 at 50%, absentee voting rules modified to allow all to vote absentee if desired",,,2020-03-07
-2020-03-13,,State of Disaster Declared,,2020-03-13
+2020-03-07,"gatherings of more than 500 prohibited, gatherings of less than 500 at 50%, absentee voting rules modified to allow all to vote absentee if desired",,,2020-03-07
+2020-03-13,,a state of disaster had been declared,,2020-03-13
 2020-03-14,"Absentee ballot qualifications loosened to allow any voter to obtain one, ballow application extended, schools must exhaust snow days before closing permanently",,,2020-03-14
 2020-03-15,All NYC Schools closed until April 20,,,2020-03-15
 2020-03-16,"All gatherings of over 50 people, including religious services, are suspended.  Onsite food and drink service suspended, alcohol delivery expanded.  Gyms, theaters, and casinos closed.",,,2020-03-16
-2020-03-18,"All schools in New York State ordered to close until April 1. Non-NY registered medical practitioners allowed to operate in NYS. Building, construction, energy conservation codes temporarily suspended until April 17 for establishment of temporary hospitals, extensions, and capacity increases. Adult day care program transportation suspended. Visitors and community outings restricted for residents at mental hygiene facilities. Abbreviated training permitted to address staff shortages in medical support and administrative programs and facilities. Patients with COVID allowed to reenter nursing homes. Temporary hospital wards created. Background checks for child day care requirements suspended. Unemployment filing requirements relaxed in cases where unemployment arose due to COVID-19 related closures or mandatory orders. Hearings can be held by conference call or similar electronic method. No locality or political subdivision permitted to issue local emergency order or executive order related to COVID-19 without state approval.",Restaraunts and Bars allowed to deliver alcohol,,2020-03-18
+2020-03-18,"All schools in New York State ordered to close until April 1. Non-NY registered medical practitioners allowed to operate in NYS. Building, construction, energy conservation codes temporarily suspended until April 17 for establishment of temporary hospitals, extensions, and capacity increases. Adult day care program transportation suspended. Visitors and community outings restricted for residents at mental hygiene facilities. Abbreviated training permitted to address staff shortages in medical support and administrative programs and facilities. Patients with COVID allowed to reenter nursing homes. Temporary hospital wards created. Background checks for child day care requirements suspended. Unemployment filing requirements relaxed in cases where unemployment arose due to COVID-19 related closures or mandatory orders. Hearings can be held by conference call or similar electronic method. No locality or political subdivision permitted to issue local emergency order or executive order related to COVID-19 without state approval.",restaraunts and bars were now allowed to deliver alcohol,,2020-03-18
 2020-03-19,All shopping malls and public amusement places closed.,De facto stay at home order issued,,2020-03-19
 2020-03-20,Stay at home order issued.  Non-essential businesses are restricted to 50% staff.  No enforcement of evictions for 90 days.,"Schools, bars, restaruants and gyms closed, gatherings of more than 10 people prohibited, except for religious services",,2020-03-20
 2020-03-21,"Hair salons, tattoo/piercing parlors, and related industries closed. All non-essential businesses and not-for-profit entities required to utilize telecommuting or work from home.   Employers reduce in-person workface by 75%. Banks cannot foreclose on people or businesses due to COVID-19 hardship. Opportunities to apply for forebearance on mortgages mandated. ATM, overdraft, and late fees restricted or modified.",,,2020-03-21
-2020-03-22,Non-essential businesses and not-for-profit entities must reduce in-person workforce by 100%.,Non-essential medical procedures suspended,,2020-03-22
+2020-03-22,Non-essential businesses and not-for-profit entities must reduce in-person workforce by 100%.,non-essential medical procedures suspended,,2020-03-22
 2020-03-23,"Hospitals required to increase hospital beds. Ambulance location restrictions removed. Provisional certification for medical care providers with modified medical certification periods permitted. Advanced practice RNs permitted to administer anesthesia without supervision. Physician assistants, specialist assistant, and nurse practitioners permitted to provide appropriate medical care without supervising physician or written practice agreement. Medical practitioners immune from civil liability except in cases of gross negligence. Medical students permitted to become licensed or volunteer at healthcare facility without entering into affiliation agreement. Recordkeeping requirements loosened as necessary to perform tasks related to COVID-19 relief. Commissioner of Health permitted to designate trauma centers as well as modify certification/licensing of medical providers, equipment, and vehicles. Limits on physicians and postgraduate trainees' working hours removed. Graduates of foreign medical schools without licenses permitted to work in hospitals at least if completed one year of graduate medical education. Radiologic technologists, respiratory therapists, physician's assistants, registered professional nurses, licensed practicla nurses, and nurse practitioners without NYS registration permitted to operate in NYS. Labratories  holding CLIA certificate permitted to perform testing for SARS-CoV-2. Registered nurses permitted to conduct testing for COVID-19. Pharmacy technician permitted to assist licensed pharmacist with creating and issuing prescriptions. Students in healthcare programs permitted to volunteer in any healthcare facility for credit without requiring affiliation agreement. Commissioner of Health authorized to order increase in beds, including by canceling elective surgeries and procedures. Commissioner of Health authorize to suspend or revoke hospital's operating certificate if they do not meet capacity directives. Pharmacists prohibited from dispensing hydroxychloroquine or chloroquine except for FDA-approved reason or for state trial of COVID-19 treatment; permitted prescriptions limited to single 14 day amount. Health insurance companies required to provide list of all medical practitioners with current or recently expired medical license. Non-essential gatherings of any size for any reason prohibited. ",,,2020-03-23
 2020-03-25,Nursing Home Patients with COVID are sent back to the nursing homes,,,2020-03-25
 2020-03-26,,14 day quarentine instituted for travelers from COVID hotspots,,2020-03-26
@@ -69,3 +69,24 @@
 2020-10-07,,"Businesses in areas with 15% of all hospitalized patients suffering from COVID-19 are restricted to 50% capacity, this does not apply to schools or religious gatherings",,
 2020-10-09,"Red, yellow, orange zone restrictions enforced by now.",,,2020-10-9
 2020-10-14,"Director of budget authorized to withhold functs for school, school district, or locality if found to have been in violation of executive order on 2020-10-06 about non-essential gatherings and red, orange, yellow zones and related closures/restrictions or any order related to it.",,,2020-10-14
+2020-11-09,"All staff at nursing homes, including those who do not interact with residents,  must be tested for coronavirus",,,
+2020-11-12,Restaraunts and bars cannot have dine in patrons.  Delivery is allowed on the same terms as previous terms,,,
+2020-11-13,State of emergency is extended,,,
+2020-11-20,Criminal trials can now be conducted remotely with the consent of all involved,,,
+2020-11-23,Restrictions on how people may leave and return to nursing homes and similar facilities imposed,,,
+2020-11-26,Supreme court strikes down any and all restrictions on how many people may gather for worship services ,,,
+2020-12-02,Hospitals allowed to rapidly transfer patients to other hospitals to free up beds.  Schools in red and orange zones allowed to reopen as long as they follow restrictions set in place by the department of health.,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
